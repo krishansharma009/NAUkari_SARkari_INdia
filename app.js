@@ -52,10 +52,10 @@ app.use((req, res, next) => {
 });
 
 // Route: Home
-// app.get("/", (req, res) => {
-//   logger.debug("Visited home page");
-//   res.send("Hello World!");
-// });
+app.get("/", (req, res) => {
+  logger.debug("Visited home page");
+  res.send("Hello World!");
+});
 
 // Error handling middleware (Combined)
 app.use((err, req, res, next) => {
