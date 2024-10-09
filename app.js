@@ -62,6 +62,14 @@ app.get("/", (req, res) => {
   logger.debug("Visited home page");
   res.send("Hello World!");
 });
+<<<<<<< HEAD
+=======
+
+app.get("/api", (req, res) => {
+  res.send("hello");
+});
+
+>>>>>>> be06a5b00de9a38ca0f57ec3a39a5ceaadcb3542
 
 // Error handling middleware (Combined)
 app.use((err, req, res, next) => {
