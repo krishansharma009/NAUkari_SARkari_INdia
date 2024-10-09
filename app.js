@@ -14,7 +14,13 @@ const errorHandler = require("./middleware/errorHandler");
 
 // const adminRoutes = require("./routes/admin");
 // const jobsRoutes = require("./routes/jobs");
-// const publicRoutes = require("./routes/public");
+const categoryRoute = require("./api/CategoryManagenet/categoryRoute");
+const subCategoryRoute = require("./api/SubcategoryManagement/subCategoryRoute");
+const statesRoute = require("./api/StateManagement/stateroute");
+const depertmentRoute = require("./api/DepartmentManagement/depertmentRoute");
+const jobRouter = require("./api/jobmanagement/jobRoute");
+const jobupdateRouter = require("./api/jobupdatemanagement/jobupdateRoute");
+const jobSeoRouter = require("./api/SEOmanagement/jobSeoRoute");
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -52,10 +58,10 @@ app.use((req, res, next) => {
 });
 
 // Route: Home
-// app.get("/", (req, res) => {
-//   logger.debug("Visited home page");
-//   res.send("Hello World!");
-// });
+app.get("/", (req, res) => {
+  logger.debug("Visited home page");
+  res.send("Hello World!");
+});
 
 // Error handling middleware (Combined)
 app.use((err, req, res, next) => {
@@ -68,6 +74,13 @@ app.use((err, req, res, next) => {
 // app.use("/", publicRoutes);
 // app.use("/jobs", jobsRoutes);
 // app.use("/admin", adminRoutes);
+app.use("/category", categoryRoute);
+app.use("/subcategory", subCategoryRoute);
+app.use("/state", statesRoute);
+app.use("/depertment", depertmentRoute);
+app.use("/job", jobRouter);
+app.use("/jobupdate", jobupdateRouter);
+app.use("/seo", jobSeoRouter);
 
 // Error handling middleware
 app.use(errorHandler);

@@ -1,6 +1,6 @@
 const { Op, DataTypes } = require("sequelize");
 const logger = require("../middleware/logger");
-const sequelize = require("../config/db-source"); // Assume this is your Sequelize instance
+const sequelize = require("../config/datasource-db"); // Assume this is your Sequelize instance
 
 const REST_API = {
   /**
@@ -148,6 +148,7 @@ const REST_API = {
       }
 
       logger.info(`Soft deleted record from ${model.name} with id ${id}`);
+      return "deleted";
     } catch (error) {
       logger.error(
         `Error soft deleting record from ${model.name}: ${error.message}`
