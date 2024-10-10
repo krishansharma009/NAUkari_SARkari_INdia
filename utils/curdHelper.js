@@ -54,6 +54,8 @@ const REST_API = {
         totalPages: Math.ceil(result.count / limit),
         currentPage: parseInt(page),
       };
+
+
     } catch (error) {
       logger.error(
         `Error reading records from ${model.name}: ${error.message}`

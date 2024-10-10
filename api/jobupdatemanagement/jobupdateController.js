@@ -7,7 +7,7 @@ const JobUpdateController = {
   getAllJobUpdates: async (req, res) => {
     try {
       const result = await REST_API.getAll(JobUpdate, req.query);
-      res.json(result);
+      res.json(result.rows);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

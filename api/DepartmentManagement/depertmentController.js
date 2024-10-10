@@ -4,7 +4,7 @@ const depertmentController = {
   getAllDepertment: async (req, res) => {
     try {
       const response = await REST_API.getAll(Category);
-      res.json(response);
+      res.json(response.rows);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

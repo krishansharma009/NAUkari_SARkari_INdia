@@ -15,7 +15,7 @@ JobSEO.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "Jobs",
+        model: "jobs",
         key: "id",
       },
     },

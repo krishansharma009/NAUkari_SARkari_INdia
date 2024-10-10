@@ -5,7 +5,7 @@ const StateController = {
   getAllStates: async (req, res) => {
     try {
       const response = await REST_API.getAll(State);
-      res.json(response);
+      res.json(response.rows);
     } catch (err) {
       res.status(500).json({ error: error.message });
     }

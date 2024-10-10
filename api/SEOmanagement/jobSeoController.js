@@ -5,7 +5,7 @@ const JobSEOController = {
   getAllJobSEOs: async (req, res) => {
     try {
       const result = await REST_API.getAll(JobSEO, req.query);
-      res.json(result);
+      res.json(result.rows);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
